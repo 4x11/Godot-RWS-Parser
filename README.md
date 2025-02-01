@@ -17,4 +17,35 @@ This project provides tools to read data from RenderWare binary stream formats w
 
 ## Usage
 
-In progress...
+Copy files to your Godot project and use the library in your code:
+
+```gdscript
+# Create an RWInstance
+var rw_instance := RWInstance.new()
+
+# Register necessary extensions
+rw_instance.register_extension(RWInstance.ExtensionType.GEOMETRY, RWExtMesh.SECTION_ID, RWExtMesh)
+# Register other extensions if needed
+# rw_instance.register_extension(...)
+
+# Create an RWStream and open the file
+var dff_path := GTA3_PATH.path_join("models/Generic/arrow.DFF")
+var stream := RWStream.new()
+if not stream.open_from_file(dff_path):
+    printerr("Failed to open RWS file: ", dff_path)
+    return
+
+# Read the section header and get its type
+var header = stream.get_section_header()
+if header["type"] != RWSection.Type.CLUMP:
+    printerr("The RWS file is not a clump!")
+    return
+
+# Read the RWClump section
+var clump := RWClump.new()
+if not clump._read(rw_instance, null, stream, header["size"], header["version"]):
+    printerr("Failed to read the RWS file!")
+    return
+
+# Now you can work with the parsed data
+print("RWClump frames count: %d" % [clump.frame_list.frames.size()])
