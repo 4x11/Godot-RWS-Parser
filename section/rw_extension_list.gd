@@ -16,6 +16,8 @@ func _read(instance: RWInstance, parent: RWSection, stream: RWStream,
 		extension_type = RWInstance.ExtensionType.GEOMETRY
 	elif parent is RWMaterial:
 		extension_type = RWInstance.ExtensionType.MATERIAL
+	elif parent is RWTexture:
+		extension_type = RWInstance.ExtensionType.TEXTURE
 	elif parent is RWAtomic:
 		extension_type = RWInstance.ExtensionType.ATOMIC
 	else:

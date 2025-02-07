@@ -6,7 +6,8 @@ enum ExtensionType {
 	FRAME = 1,
 	GEOMETRY = 2,
 	MATERIAL = 3,
-	ATOMIC = 4,
+	TEXTURE = 4,
+	ATOMIC = 5,
 }
 
 var extensions: Array[Dictionary] = []
