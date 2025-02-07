@@ -76,6 +76,13 @@ func get_section_header() -> Dictionary:
 	return header
 
 
+func get_vector2() -> Vector2:
+	var vector2 := Vector2()
+	vector2.x = get_float()
+	vector2.y = get_float()
+	return vector2
+
+
 func get_vector3() -> Vector3:
 	var vector3 := Vector3()
 	vector3.x = get_float()
