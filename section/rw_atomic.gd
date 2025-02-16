@@ -14,9 +14,9 @@ func _read(instance: RWInstance, parent: RWSection, stream: RWStream,
 	if data_header["type"] != RWSection.Type.DATA:
 		return false
 	
-	var frame_index: int = stream.get_u32()
-	var geometry_index: int = stream.get_u32()
-	var flags: int = stream.get_u32()
+	frame_index = stream.get_u32()
+	geometry_index = stream.get_u32()
+	flags = stream.get_u32()
 	
 	if version >= 0x30400:
 		stream.skip(4)
