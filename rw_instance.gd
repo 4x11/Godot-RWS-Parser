@@ -8,6 +8,8 @@ enum ExtensionType {
 	MATERIAL = 3,
 	TEXTURE = 4,
 	ATOMIC = 5,
+	NATIVE_TEXTURE = 6,
+	TEXTURE_DICTIONARY = 7,
 }
 
 var extensions: Array[Dictionary] = []

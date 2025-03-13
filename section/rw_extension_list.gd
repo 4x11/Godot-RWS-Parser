@@ -20,6 +20,10 @@ func _read(instance: RWInstance, parent: RWSection, stream: RWStream,
 		extension_type = RWInstance.ExtensionType.TEXTURE
 	elif parent is RWAtomic:
 		extension_type = RWInstance.ExtensionType.ATOMIC
+	elif parent is RWNativeTexture:
+		extension_type = RWInstance.ExtensionType.NATIVE_TEXTURE
+	elif parent is RWTexDictionary:
+		extension_type = RWInstance.ExtensionType.TEXTURE_DICTIONARY
 	else:
 		return false
 	
