@@ -32,7 +32,7 @@ func _read(instance: RWInstance, parent: RWSection, stream: RWStream,
 	
 	# read extension list section
 	var extension_list_header: Dictionary = stream.get_section_header()
-	if extension_list_header["type "] != RWSection.Type.EXTENSION_LIST:
+	if extension_list_header["type"] != RWSection.Type.EXTENSION_LIST:
 		return false
 	
 	extension_list = RWExtensionList.new()
