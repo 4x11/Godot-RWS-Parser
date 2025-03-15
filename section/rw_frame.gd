@@ -6,6 +6,7 @@ var up := Vector3()
 var at := Vector3()
 var position := Vector3()
 var parent_index: int = -1
+var geometry_index: int = -1
 var extension_list: RWExtensionList = null
 
 

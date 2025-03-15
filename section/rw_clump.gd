@@ -57,6 +57,10 @@ func _read(instance: RWInstance, parent: RWSection, stream: RWStream,
 			return false
 		
 		atomics[i] = atomic
+		
+		# store geometry index in RWFrame
+		var frame: RWFrame = frame_list.frames[atomic.frame_index]
+		frame.geometry_index = atomic.geometry_index
 	
 	# TODO: read lights
 	if num_lights > 0:
