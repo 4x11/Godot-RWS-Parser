@@ -35,7 +35,7 @@ enum RasterType {
 }
 
 enum DXTCompressionType {
-	INVALID = 0,
+	UNCOMPRESSED = 0,
 	DXT1 = 1,
 	DXT2 = 2,
 	DXT3 = 3,
@@ -51,7 +51,7 @@ var addressing_u := RWTexture.Addressing.INVALID
 var addressing_v := RWTexture.Addressing.INVALID
 var raster_format := RasterFormat.DEFAULT
 var raster_type := RasterType.NORMAL
-var dxt_compression := DXTCompressionType.INVALID
+var dxt_compression := DXTCompressionType.UNCOMPRESSED
 var has_alpha: bool = false
 var width: int = 0
 var height: int = 0
